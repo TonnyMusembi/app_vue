@@ -1,18 +1,36 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <h2>Vue  Pie Chart Demo</h2>
+    <GChart
+      type="PieChart"
+      :options="options"
+      :data="data"
+    />    
   </div>
 </template>
-
+ 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import { GChart } from "vue-google-charts";
 export default {
-  name: "Home",
+  name: "App",
   components: {
-    HelloWorld,
+    GChart
   },
+  data() {
+    return {
+      data: [
+          ['Daily Routine', 'Hours per Day'],
+          ['Work',     14],
+          ['Eat',      1],
+          ['Reading',  2],
+          ['Exercise', 2],
+          ['Sleep',    5]
+      ],
+      options: {
+        width: 1100,
+        height: 400
+      }
+    };
+  }
 };
-</script>
+</script>s
